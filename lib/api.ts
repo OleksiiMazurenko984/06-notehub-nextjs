@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Note, NoteData, NoteDetails } from '@/types/note';
+import type { Note, NoteData } from '@/types/note';
 
 const myKey = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
@@ -41,7 +41,7 @@ export const deleteNote = async (noteId: Note['id']) => {
   return data;
 };
 
-export const fetchNoteById = async (noteId: NoteDetails['id']) => {
-  const { data } = await notesInstance.get<NoteDetails>(`/notes/${noteId}`);
+export const fetchNoteById = async (noteId: Note['id']) => {
+  const { data } = await notesInstance.get<Note>(`/notes/${noteId}`);
   return data;
 };

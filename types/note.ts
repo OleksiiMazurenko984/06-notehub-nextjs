@@ -4,20 +4,13 @@ export interface Note {
   id: string;
   title: string;
   content: string;
+  createdAt: string;
+  updatedAt: string;
   tag: NoteTag;
 }
 
 export interface NoteData {
   title: string;
   content: string;
-  tag: NoteTag;
-}
-
-export interface NoteDetails {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
   tag: NoteTag;
 }

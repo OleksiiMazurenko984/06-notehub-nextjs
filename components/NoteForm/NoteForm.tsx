@@ -37,6 +37,7 @@ export default function NoteForm({ onClose }: NoteFormProps) {
     mutationFn: createNote,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['notes'] });
+      onClose();
     },
   });
 
@@ -52,7 +53,6 @@ export default function NoteForm({ onClose }: NoteFormProps) {
 
     addNote(noteData);
     actions.resetForm();
-    onClose();
   };
 
   return (
